@@ -1,0 +1,386 @@
+/* general */
+/* Efecto crt: gradiente de 4p repetido infinitamente 
+    esta por encima de todo gracias a estar 9999 en el eje z
+    y para que no bloquee lo demas no tiene pointer events
+
+*/
+html::after {  
+    content: ""; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+    background-size: 100% 4px;
+    z-index: 99999;
+    pointer-events: none;
+    
+}
+
+
+
+body{
+    font-family: 'Hack Nerd Font Mono';
+    background-color:#252538;
+    color:white;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(media/shinobu.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* barra de arriba */
+
+.nav-main{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.nav-inicio{
+    display:flex;
+    align-items:center;
+    width: 100px;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.nav-menu{
+    display:flex;
+    gap:1.5rem;
+    list-style: none;
+}
+
+.nav-menu li a{
+    font-size: 2rem;
+    text-decoration: none;
+    color:inherit;
+}
+.nav-menu li a:hover{
+    border-bottom: 1px solid #ffffff;
+}
+
+.nav-branch{
+    width:51px
+}
+
+/* main */
+.title{
+    min-width: 300px;
+    display:flex;
+    justify-content: center;
+}
+
+.title h1{
+    min-width: 700px;
+    display:flex;
+    justify-content: center;
+    font-size:1.5rem;
+    border:  1px solid #f7f7f7;
+    padding:10px
+} 
+
+.profile{
+    display:flex;
+    align-items: center;
+    gap: 5rem;
+    justify-content:center;
+    padding:45px 30px;
+}
+
+.bio p, .bio h3{
+    margin:0.5rem;
+}
+
+.profile img{
+    width: 380px;
+    border-radius:4px;
+}
+
+.bio{
+    background: transparent;
+    backdrop-filter: blur(15px);
+    min-width:400px;
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.cursor{
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink{
+    50%{opacity: 0;}
+}
+.intereses{
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+/* grid --------------------------------- */
+
+.aboutme{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(2,1fr);
+    gap:1rem;
+    margin:0 auto;
+    max-width: 1000px;
+    padding:0.5rem;
+
+}
+
+.box{
+    border: 1px solid white;
+    text-decoration: none;
+    text-align: center;
+    padding:1.5rem;
+    color: inherit;
+}
+
+.box:hover{
+    transform: translateY(-2px);
+    text-decoration: underline;
+
+}
+
+.status-bar {
+    max-width: 1000px;        /* Mismo ancho que .aboutme */
+    width: 90%;
+    margin: 1rem auto 2rem;   /* Centrado, separado arriba */
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    font-size: 0.9rem;
+}
+
+.status-prompt {
+    margin: 0 0 0.8rem 0;
+    opacity: 0.8;
+}
+
+.status-prompt:last-child {
+    margin: 0.8rem 0 0 0;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem 2rem;
+    padding-left: 1.5rem;    
+}
+
+.status-grid span {
+    opacity: 0.9;
+}
+
+.status-grid strong {
+    opacity: 0.6;
+    font-weight: normal;
+}
+
+/*linux rice --------------------------------- */
+
+.desktop{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.desktop-info dl {
+    display:grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    margin: 0;
+}
+
+.desktop-info dt{
+    font-size: 0.85rem;
+    opacity: 0.6;
+    align-self: end;
+}
+
+.desktop-info dd{
+    margin: 0;
+    font-size: 1.1rem;
+    align-self: end;
+}
+
+
+
+.backbutton{
+    color:inherit;
+    text-decoration: none;
+    display:inline-flex;
+    border: 1px solid white;
+    margin: 20px 20px;
+    padding: 0.5rem 1rem;
+}
+
+.backbutton:hover{
+    background: #ffffff;
+    color: #1e1e2e; 
+}
+
+/*About me ------------------------------------ */ 
+
+.about-title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:large;
+    padding:1rem 0;
+
+    border:2px solid white;
+    margin: 0 auto 1rem;
+
+    max-width: 1200px;
+}
+.about-title h1{
+    margin:1rem;
+}
+
+.about-box{
+    display:flex;
+    border: 2px solid white;
+    max-width: 1200px;
+    min-height:520px;
+    margin: 0   auto;
+    background:transparent;
+    backdrop-filter: blur(7px);
+}
+
+.about-character{
+    display:flex;
+    flex-direction:column;
+
+    flex:300px;
+
+    padding:1.5rem;
+
+    border-right:2px solid white;
+}
+
+.character-sprite{
+    width: 300px;
+    image-rendering: pixelated;
+    align-self: center;
+}
+
+
+.stats{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 1rem;
+    padding:3rem 0;
+    border-bottom:1px solid white;
+    border-top:1px solid white;
+}
+.stats dt{ opacity: 0.7; }
+.stats dd{ margin: 0; text-align: right; }
+
+.content-text{
+    flex:1;
+
+    padding:2rem;
+}
+
+.tech-list{
+    list-style:none;
+    padding:0;
+}
+
+.tech-list li{
+    margin-bottom:0.6rem;
+}
+
+.tech-list li::before{
+
+    content:"> ";
+
+    opacity:.6;
+
+}
+
+/* Proyectos */
+.proyects-title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.proyect-main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.academics,
+.personal{
+    width: 600px;
+}
+
+.proyect-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;  /* espacio entre proyectos */
+}
+
+.proyect-container{
+    border:1px solid #666;
+    border-radius: 8px;
+    padding:15px; 
+
+    background:transparent;
+    backdrop-filter:blur(6px);
+}
+
+/*Responsividad  */ 
+@media(max-width:800px){
+    .profile{
+        flex-direction: column;
+    }
+
+    .profile img{
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .bio{
+        min-width: unset;
+        width:90%;
+    }
+
+    .title h1{
+        min-width: unset;
+        width: 90%;
+    }
+
+    .desktop{
+        flex-direction: column;
+    }
+}
+
+@media(max-width:1000px){
+    .desktop{
+        flex-direction: column;
+
+    }
+}
+
+
