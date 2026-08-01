@@ -258,7 +258,7 @@ body{
     display:flex;
     border: 2px solid white;
     max-width: 1200px;
-    min-height:520px;
+    min-height:auto;
     margin: 0   auto;
     background:transparent;
     backdrop-filter: blur(7px);
@@ -268,7 +268,7 @@ body{
     display:flex;
     flex-direction:column;
 
-    flex:300px;
+    flex:0 0 300px;
 
     padding:1.5rem;
 
@@ -352,78 +352,161 @@ body{
 }
 
 /*Responsividad  */ 
-@media(max-width: 768px){
-    .nav-main {
-        padding: 0.5rem 1rem;
+@media (max-width: 768px) {
+    
+    /* ---------- GLOBAL ---------- */
+    body {
+        overflow-x: hidden;
     }
     
-    .nav-inicio {
-        width: auto;           
-        gap: 0.5rem;
+    /* ---------- ABOUT ---------- */
+    .about-title {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0.5rem;
+        font-size: medium;
     }
     
-    .nav-branch {
-        width: 40px;          
+    .about-title h1 {
+        margin: 0.5rem;
+        font-size: 1.2rem;
     }
     
-    .nav-menu li a {
-        font-size: 1.5rem;     
-    }
-    
-    .title {
-        padding: 0 1rem;
-    }
-    
-    .title h1 {
-        min-width: unset;
-        width: 100%;
-        font-size: 1.2rem;    
-        padding: 8px;
-    }
-    
-    .profile {
+    .about-box {
         flex-direction: column;
-        gap: 1.5rem;            
-        padding: 20px 1rem;     
+        width: 90%;
+        min-height: unset;
+        margin: 0 auto 2rem;
     }
     
-    .profile img {
+    .about-character {
+        flex: unset;
         width: 100%;
-        max-width: 280px;      
-        height: auto;
+        border-right: none;
+        border-bottom: 2px solid white;
+        padding: 1rem;
+        align-items: center;
     }
     
-    .bio {
-        min-width: unset;
+    .character-sprite {
+        width: 150px;           /* De 300px a 150px en móvil */
+    }
+    
+    .stats {
+        padding: 1.5rem 0;
         width: 100%;
-        padding: 15px;
+        max-width: 280px;
     }
     
-    .aboutme {
-        grid-template-columns: 1fr;   
-        grid-template-rows: repeat(4, auto);
-        max-width: 100%;
+    .derecha {
+        width: 100%;
+    }
+    
+    .content-text {
+        padding: 1.5rem 1rem;
+    }
+    
+    .content-text h2 {
+        font-size: 1.1rem;
+    }
+    
+    /* ---------- PROYECTOS ---------- */
+    .proyects-title {
         padding: 0 1rem;
+        text-align: center;
     }
     
-    .box {
-        padding: 1.2rem;
+    .proyects-title h1 {
+        font-size: 1.5rem;
+    }
+    
+    .proyect-main {
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .academics,
+    .personal {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 2rem;
+    }
+    
+    .academics h2,
+    .personal h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .proyect-list {
+        gap: 15px;
+    }
+    
+    .proyect-container {
+        padding: 12px;
+    }
+    
+    .proyect-info h3 {
         font-size: 1rem;
     }
     
-    .status-bar {
-        margin: 1rem;
-        padding: 1rem;
-        width: auto;            
+    .proyect-info p {
+        font-size: 0.9rem;
     }
     
-    .status-grid {
-        grid-template-columns: 1fr;   
-        padding-left: 0.5rem;
-        gap: 0.3rem;
+    /* ---------- LINUX RICE ---------- */
+    .desktop {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 20px 1rem;
+        max-width: 100%;
     }
     
+    .desktop-info h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .desktop-info dl {
+        grid-template-columns: 1fr;
+        row-gap: 0.2rem;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .desktop-info dt {
+        font-size: 0.75rem;
+        opacity: 0.5;
+        margin-top: 0.8rem;
+    }
+    
+    .desktop-info dd {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .desktop-shot {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .desktop-shot img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 4px;
+    }
+    
+    /* ---------- BACK BUTTON ---------- */
+    .backbutton {
+        margin: 10px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
+    
 
 @media(max-width:1000px){
     .desktop{
