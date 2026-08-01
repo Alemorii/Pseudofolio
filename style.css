@@ -56,6 +56,7 @@ body{
     display:flex;
     gap:1.5rem;
     list-style: none;
+    font-size: 6px;
 }
 
 .nav-menu li a{
@@ -353,6 +354,10 @@ body{
 
 /*Responsividad  */ 
 @media(max-width: 768px){
+
+    body {
+        overflow-x: hidden;
+    }
     .nav-main {
         padding: 0.5rem 1rem;
     }
@@ -423,12 +428,35 @@ body{
         gap: 0.3rem;
     }
     
+    /*PROYECTOS */
+    .proyects-title{
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .academics,
+    .personal{
+        width: 100%;
+        max-width: 600px;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    .proyect-container{
+    width: 100%;
+    box-sizing: border-box;
+}
 }
 
 @media(max-width:1000px){
     .desktop{
         flex-direction: column;
 
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
