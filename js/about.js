@@ -4,7 +4,7 @@ ScrollReveal().reveal('.about-character',{ delay: 100 });
 
 const sprite = document.getElementById("sprite");
 
-const laugh = new Audio("audio/laugh.mp3");
+const laugh = new Audio("../media/laugh.mp3");
 
 sprite.addEventListener("click", () => {
     laugh.currentTime = 0;
