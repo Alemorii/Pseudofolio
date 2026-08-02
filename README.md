@@ -5,5 +5,5 @@ this is not an actual portfolio-its a learn project focused on layout, responsiv
 ### Live Demo
 https://alemorii.github.io/Pseudofolio/
 
-#Preview
-![Preview](media/screenshot.png.png)
+## Preview
+![Preview](media/screenshot.png)
